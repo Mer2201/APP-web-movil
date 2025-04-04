@@ -12,13 +12,13 @@
           <!-- Campos del formulario -->
           <mat-form-field class="inputs-login" appearance="outline">
             <mat-label>Nombre</mat-label>
-            <input [(ngModel)]="user.first_name" type="text" matInput placeholder="Ingresa nombre">
+            <input [(ngModel)]="user.first_name" type="text" matInput placeholder="Ingresa nombre"(keypress)="validarSoloLetras($event)" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*">
           </mat-form-field>
           <div *ngIf="errors.first_name" class="invalid-feedback">{{ errors.first_name }}</div>
 
           <mat-form-field class="inputs-login" appearance="outline">
             <mat-label>Apellidos</mat-label>
-            <input [(ngModel)]="user.last_name" type="text" matInput placeholder="Ingresa apellido">
+            <input [(ngModel)]="user.last_name" type="text" matInput placeholder="Ingresa apellido"(keypress)="validarSoloLetras($event)" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*">
           </mat-form-field>
           <div *ngIf="errors.last_name" class="invalid-feedback">{{ errors.last_name }}</div>
 
@@ -43,7 +43,7 @@
 
           <mat-form-field class="inputs-login" appearance="outline">
             <mat-label>Ciudad</mat-label>
-            <input [(ngModel)]="user.ciudad" type="text" matInput placeholder="Ingresa ciudad">
+            <input [(ngModel)]="user.ciudad" type="text" matInput placeholder="Ingresa ciudad"(keypress)="validarSoloLetras($event)" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*">
           </mat-form-field>
           <div *ngIf="errors.ciudad" class="invalid-feedback">{{ errors.ciudad }}</div>
 
@@ -78,6 +78,7 @@
       </div>
     </div>
   </ng-container>
+  
   <!-- Código html para la vista de pantalla completa (desktop) -->
   <ng-template #isDesktop>
     <div class="wrapper-desktop">
@@ -98,13 +99,13 @@
 
               <mat-form-field class="inputs-login" appearance="outline">
                   <mat-label>Nombre</mat-label>
-                  <input [(ngModel)]="user.first_name" type="text" matInput placeholder="Ingresa nombre">
+                  <input [(ngModel)]="user.first_name" type="text" matInput placeholder="Ingresa nombre"(keypress)="validarSoloLetras($event)" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*">
               </mat-form-field>
               <div *ngIf="errors.first_name" class="invalid-feedback">{{ errors.first_name }}</div>
 
               <mat-form-field class="inputs-login" appearance="outline">
                   <mat-label>Apellidos</mat-label>
-                  <input [(ngModel)]="user.last_name" type="text" matInput placeholder="Ingresa apellido">
+                  <input [(ngModel)]="user.last_name" type="text" matInput placeholder="Ingresa apellido"(keypress)="validarSoloLetras($event)" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*">
               </mat-form-field>
               <div *ngIf="errors.last_name" class="invalid-feedback">{{ errors.last_name }}</div>
 
@@ -129,7 +130,7 @@
 
               <mat-form-field class="inputs-login" appearance="outline">
                   <mat-label>Ciudad</mat-label>
-                  <input [(ngModel)]="user.ciudad" type="text" matInput placeholder="Ingresa ciudad">
+                  <input [(ngModel)]="user.ciudad" type="text" matInput placeholder="Ingresa ciudad"(keypress)="validarSoloLetras($event)" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]*">
               </mat-form-field>
               <div *ngIf="errors.ciudad" class="invalid-feedback">{{ errors.ciudad }}</div>
 
@@ -159,6 +160,7 @@
           </div>
         </div>
       </div>
+    
       <div class="footer-desktop">
         <img src="/assets/images/liston-img.png" class="liston-img">
       </div>

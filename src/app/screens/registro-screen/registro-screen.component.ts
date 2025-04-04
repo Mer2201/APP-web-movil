@@ -70,6 +70,15 @@ export class RegistroScreenComponent implements OnInit{
     }
   }
 
+  public validarSoloLetras(event: KeyboardEvent) {
+    const charCode = event.key.charCodeAt(0);
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]$/;
+
+    if (!regex.test(event.key)) {
+        event.preventDefault();
+    }
+}
+
   public isMobile(){
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)){
       return true;
